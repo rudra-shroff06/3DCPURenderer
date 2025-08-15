@@ -1,0 +1,9 @@
+SFML-3.0.0
+tests
+mingw64
+out
+a.exe
+CMakeLists.txt
+run.exe
+TheFirst.bmp
+.vs
