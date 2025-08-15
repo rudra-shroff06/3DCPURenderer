@@ -25,9 +25,12 @@ struct Rasterizer {
 		Vertex v2 = tri.v2;
 		//std::cout << v1.position.y << '\n';
 		//Convert to ndc then viewport
-		v0.position = v0.position * (v0.invW);
-		v1.position = v1.position * (v1.invW);
-		v2.position = v2.position * (v2.invW);
+		v0.position.x = v0.position.x * (v0.invW);
+		v0.position.y = v0.position.y * (v0.invW);
+		v1.position.x = v1.position.x * (v1.invW);
+		v1.position.y = v1.position.y * (v1.invW);
+		v2.position.x = v2.position.x * (v2.invW);
+		v2.position.y = v2.position.y * (v2.invW);
 		//std::cout << v1.position.y << '\n';
 
 		v0.position.x = (framebuffer->width * (v0.position.x + 1.f)) * .5f;
@@ -59,7 +62,9 @@ struct Rasterizer {
 					return;
 				}
 
-				if (alpha < 0 || beta < 0 || gamma < 0) continue;
+				const float EPS = -1e-5f;
+
+				if (alpha < EPS || beta < EPS || gamma < EPS) continue;
 
 
 
