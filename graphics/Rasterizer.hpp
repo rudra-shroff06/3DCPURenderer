@@ -72,6 +72,10 @@ struct Rasterizer {
 				float interpolatedW = 1 / interpolatedinvW;
 				Vector3f interpolatedcolor = ((v0.color * v0.invW * alpha) + (v1.color * v1.invW * beta) + (v2.color * v2.invW * gamma)) * interpolatedW;
 				Vector3f pixelColor = { std::clamp(interpolatedcolor.x, 0.f, 1.f), std::clamp(interpolatedcolor.y, 0.f, 1.f) , std::clamp(interpolatedcolor.z, 0.f, 1.f) };
+				
+				Vector2f interpolatedUV = ((v0.uv * v0.invW * alpha) + (v1.uv * v1.invW * beta) + (v2.uv * v2.invW * gamma)) * interpolatedW;
+				
+				
 				float interpolatedz_ndc = ((v0.position.z * v0.invW * alpha) + (v1.position.z * v1.invW * beta) + (v2.position.z * v2.invW * gamma));
 
 
