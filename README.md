@@ -32,15 +32,15 @@ Some of the key math & computer graphics concepts applied in this renderer:
 
 # 🛠️ How it Works
 The Renderer mimics the traditional **graphics pipeline:**
-**1. Model Transform** → Apply object’s local transformations (scale, rotate, translate).
-**2. View Transform** → Convert world coordinates to camera space using quaternions.
-**3. Projection Transform** → Apply perspective projection matrix.
-**4. Clipping** → Remove geometry outside the view frustum.
-**5. Perspective Divide** → Normalize Coordinates (`x/w`, `y/w`, `z/w`).
-**6. Viewport Transform** → Map NDC → screen space.
-**7. Rasterization** → Fill triangles using barycentric interpolation and scanline algorithm (also known as bounding box algo).
-**8. Depth Text** → Compare Z-buffer values to resolve occlusion.
-**9. Interpolation** → Apply UV (texture) & color using perspective-correct barycentric weights.
+1. **Model Transform** → Apply object’s local transformations (scale, rotate, translate).
+2. **View Transform** → Convert world coordinates to camera space using quaternions.
+3. **Projection Transform** → Apply perspective projection matrix.
+4. **Clipping** → Remove geometry outside the view frustum.
+5. **Perspective Divide** → Normalize Coordinates (`x/w`, `y/w`, `z/w`).
+6. **Viewport Transform** → Map NDC → screen space.
+7. **Rasterization** → Fill triangles using barycentric interpolation and scanline algorithm (also known as bounding box algo).
+8. **Depth Text** → Compare Z-buffer values to resolve occlusion.
+9. **Interpolation** → Apply UV (texture) & color using perspective-correct barycentric weights.
 
 # 🚀 Getting Started
 **Prerequisites**
