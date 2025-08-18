@@ -82,7 +82,6 @@ struct Rasterizer {
 				float depth = (interpolatedz_ndc + 1) * .5f;
 
 				framebuffer->setPixel(framebuffer->width - 1 - x, framebuffer->height - 1- y, pixelColor, depth);
-				//hi
 			}
 		}
 
